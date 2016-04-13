@@ -10,6 +10,11 @@ namespace Lesson1
     {
         static void Main(string[] args)
         {
+            //Task 1
+
+            //Task 2
+
+            //Task 3
         }
     }
 }
