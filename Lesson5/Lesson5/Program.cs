@@ -28,7 +28,7 @@ namespace Lesson5
             else
             {
                 double kopeck = Math.Truncate(OrderSum);
-                return string.Format("{0} р. {1} коп.", kopeck, OrderSum - kopeck);
+                return string.Format("{0} р. {1} коп.", kopeck, Convert.ToInt32((OrderSum - kopeck) * 100));
             }
         }
     }
@@ -72,9 +72,9 @@ namespace Lesson5
         {
             //In progress
             IP Ivanov = new IP("Ivanov", "12-22-3044", 1, "22-333-333", 32.11);
-            OOO 5Gis = new OOO("5gis", "9990K-11", 2, "22-3332-22", 22.54);
+            OOO Gis4 = new OOO("4gis", "9990K-11", 2, "22-3332-22", 22.54);
             Console.WriteLine(Ivanov.ReturnSum());
-
+            Console.WriteLine(Gis4.ReturnSum());
         }
     }
 }
