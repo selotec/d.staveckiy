@@ -8,38 +8,57 @@ namespace Lesson5._2
 {
     class Bill
     {
-        public int Id { set; get; }
-        public string Owner { set; get; }
-        public double CurrentSum { set; get; }
+        private int _id;
+        private string _owner;
+        private double _currentSum;
+        public int Id
+        {
+            get { return _id; }
+        }
+        public string Owner
+        {
+            get { return _owner; }
+        }
+        public double CurrentSum
+        {
+            get { return _currentSum; }
+        }
 
         public Bill(int id, string owner, double sum)
         {
-            Id = id;
-            Owner = owner;
+            _id = id;
+            _owner = owner;
             if (sum > 0)
             {
-                CurrentSum = sum;
+                _currentSum = sum;
             }
             else
             {
-                CurrentSum = 0;
+                _currentSum = 0;
             }
         }
         public virtual bool AddToSum(double income)
         {
-            CurrentSum += income;
-            return true;
+            if (CurrentSum + income > 0)
+            {
+                _currentSum += income;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public virtual bool SubFromSum(double outcome)
         {
-            if (CurrentSum - outcome < 0)
+            if (_currentSum - outcome < 0)
             {
                 return false;
             }
             else
             {
-                CurrentSum -= outcome;
+                _currentSum -= outcome;
                 return true;
             }
         }

@@ -11,7 +11,7 @@ namespace Lesson5._2
         static void Main(string[] args)
         {
             Metal Silver = new Metal("Silver", 1, 80.5, 123, "McDuck", 0);
-            Silver.AddToSum(1);
+            Silver.AddToSum(2);
             Console.WriteLine(string.Format("Current sum: {0}", Silver.CurrentSum));
         }
     }

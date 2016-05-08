@@ -8,14 +8,18 @@ namespace Lesson5._2
 {
     class Checking : Bill
     {
-        public double Payment { set; get; }
+        private double _payment;
+        public double Payment
+        {
+            get { return _payment; }
+        }
         public Checking(double payment, int id, string owner, double sum) : base(id, owner, sum)
         {
-            Payment = payment;
+            _payment = payment;
         }
         public bool WriteOff()
         {
-            return base.SubFromSum(Payment);
+            return base.SubFromSum(_payment);
         }
     }
 }
